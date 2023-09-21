@@ -8,8 +8,6 @@ import java.util.Optional;
 
 public interface JobApplicationRepository extends JpaRepository<JobApplication, Long> {
 
-    Optional<JobApplication> findById(Long id);
-
     List<JobApplication> findByCompanyName(String name);
 
     List<JobApplication> findByJobTitle(String name);
