@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import repository.JobApplicationRepository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,5 +55,9 @@ public class JobApplicationService {
         if(possibleApplication.isPresent()){
             jobApplicationRepository.delete(possibleApplication.get());
         }
+    }
+
+    public List<JobApplication> getAllJobApplications() {
+        return jobApplicationRepository.findAll();
     }
 }
